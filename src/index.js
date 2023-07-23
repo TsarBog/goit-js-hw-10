@@ -14,9 +14,9 @@ const selectors = {
 //     select: '.breed-select',
 // });
 
-selectors.selectBtn.addEventListener('change', handleSelectCat);
+selectors.selectBtn.addEventListener('change', handlerSelectCat);
 
-function handleSelectCat() {
+function handlerSelectCat() {
   const selectedBreedId = selectors.selectBtn.value;
   showLoader();
   fetchCatByBreed(selectedBreedId)
