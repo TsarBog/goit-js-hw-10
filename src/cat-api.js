@@ -9,9 +9,6 @@ async function fetchBreeds() {
   const END_POINT = '/breeds';
 
   const response = await axios.get(`${END_POINT}`);
-    if (response.status !== 200) {
-        throw new Error(response.statusText);
-    }
     return response.data;
 }
 
@@ -20,9 +17,6 @@ async function fetchCatByBreed(breedId) {
 
   const response = await axios
         .get(`${END_POINT}?breed_ids=${breedId}`);
-    if (response.status !== 200) {
-        throw new Error(response.statusText);
-    }
     const data = response.data;
     if (data.length === 0) {
         throw new Error('No cat found for the selected breed');
